@@ -1982,7 +1982,7 @@ GameObject:
   - component: {fileID: 1157430334}
   - component: {fileID: 1157430333}
   - component: {fileID: 1157430336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Long Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2067,7 +2067,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1157430332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 364.31, y: -3.34, z: 0}
+  m_LocalPosition: {x: 364.31, y: -4.8, z: 0}
   m_LocalScale: {x: 734.16595, y: 2, z: 3.7027998}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2330,8 +2330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d784e36b79eeee24ca3c86d9aecdf664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGrounded: 0
   veloRight: 10
-  veloJump: 5
+  veloJump: 10
 --- !u!1 &1340045875
 GameObject:
   m_ObjectHideFlags: 0

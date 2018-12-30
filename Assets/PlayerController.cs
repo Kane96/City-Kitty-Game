@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody2D rigidBody;
 
+    public bool isGrounded;
+
     public float veloRight;
     public float veloJump;
 
@@ -20,12 +22,14 @@ public class PlayerController : MonoBehaviour {
         moveVelo.x = veloRight;
         rigidBody.velocity = moveVelo;
 
-        print(rigidBody.velocity);
+        print(rigidBody.velocity.magnitude);
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        isGrounded = Physics2D.Linecast(transform.position, new Vector3(transform.position.x, transform.position.y - 0.35f, 0), 1 << LayerMask.NameToLayer("Platform"));
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             print("Jumping!");
             rigidBody.velocity = Vector2.up * veloJump;
