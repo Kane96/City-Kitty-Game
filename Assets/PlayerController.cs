@@ -6,10 +6,8 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody2D rigidBody;
 
-    public float forceRight;
-    public float veloLimitRight;
-
-    public float jumpingForce;
+    public float veloRight;
+    public float veloJump;
 
     void Start ()
     {
@@ -18,10 +16,9 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (!(rigidBody.velocity.x > veloLimitRight))
-        {
-            rigidBody.AddForce(Vector3.right * forceRight, ForceMode2D.Force);
-        }
+        Vector2 moveVelo = rigidBody.velocity;
+        moveVelo.x = veloRight;
+        rigidBody.velocity = moveVelo;
 
         print(rigidBody.velocity);
     }
@@ -31,7 +28,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Jump"))
         {
             print("Jumping!");
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpingForce);
+            rigidBody.velocity = Vector2.up * veloJump;
         }
     }
 }

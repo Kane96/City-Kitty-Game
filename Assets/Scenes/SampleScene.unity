@@ -2330,9 +2330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d784e36b79eeee24ca3c86d9aecdf664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceRight: 10
-  veloLimitRight: 10
-  jumpingForce: 15
+  veloRight: 10
+  veloJump: 5
 --- !u!1 &1340045875
 GameObject:
   m_ObjectHideFlags: 0
