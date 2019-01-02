@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     private Rigidbody2D rigidBody;
 
+    public float platformToPlayerDistance;
     public bool isGrounded;
 
+    // The continuous velocity applied to the player 
     public float veloRight;
     public float veloJump;
 
@@ -21,17 +24,23 @@ public class PlayerController : MonoBehaviour {
         Vector2 moveVelo = rigidBody.velocity;
         moveVelo.x = veloRight;
         rigidBody.velocity = moveVelo;
-
-        print(rigidBody.velocity.magnitude);
     }
 
     void Update()
     {
-        isGrounded = Physics2D.Linecast(transform.position, new Vector3(transform.position.x, transform.position.y - 0.35f, 0), 1 << LayerMask.NameToLayer("Platform"));
+        // Is there a platform 0.35 units below the player on each end of the collider?
+        if (Physics2D.Linecast(transform.position, new Vector3(transform.position.x - 1.5f, transform.position.y - platformToPlayerDistance, 0), 1 << LayerMask.NameToLayer("Platform"))  ||
+            Physics2D.Linecast(transform.position, new Vector3(transform.position.x + 1.5f, transform.position.y - platformToPlayerDistance, 0), 1 << LayerMask.NameToLayer("Platform")))
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            print("Jumping!");
             rigidBody.velocity = Vector2.up * veloJump;
         }
     }
