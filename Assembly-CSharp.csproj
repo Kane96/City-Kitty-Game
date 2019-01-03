@@ -61,10 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraController.cs" />
-    <Compile Include="Assets\PlayerController.cs" />
-    <Compile Include="Assets\Segment.cs" />
-    <Compile Include="Assets\SegmentSpawner.cs" />
+    <Compile Include="Assets\Camera\CameraController.cs" />
+    <Compile Include="Assets\Platforms\Segment.cs" />
+    <Compile Include="Assets\Platforms\SegmentSpawner.cs" />
+    <Compile Include="Assets\Player\DeathManager.cs" />
+    <Compile Include="Assets\Player\PlayerController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Programs/Save Files/Unity/Project B/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
