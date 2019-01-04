@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidBody;
 
     public float platformToPlayerDistance;
-    public bool isGrounded;
 
     // The continuous velocity applied to the player 
     public float veloRight;
@@ -28,21 +27,17 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Is there a platform 0.35 units below the player on each end of the collider?
-        // Bit shift to find the correct layer mask
-        if (Physics2D.Linecast(transform.position, new Vector3(transform.position.x - 1.2f, transform.position.y - platformToPlayerDistance, 0), 1 << LayerMask.NameToLayer("Platform"))  ||
-            Physics2D.Linecast(transform.position, new Vector3(transform.position.x + 1.2f, transform.position.y - platformToPlayerDistance, 0), 1 << LayerMask.NameToLayer("Platform")))
-        {
-            isGrounded = true;
-        }
-        else
-        {
-            isGrounded = false;
-        }
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rigidBody.velocity = Vector2.up * veloJump;
         }
+    }
+
+    public bool isGrounded()
+    {
+        // Is there a platform 0.35 units below the player on each end of the collider?
+        // Bit shift to find the correct layer mask
+        return (Physics2D.Linecast(transform.position, new Vector3(transform.position.x - 1.2f, transform.position.y - platformToPlayerDistance, 0), 1 << LayerMask.NameToLayer("Platform")) ||
+        Physics2D.Linecast(transform.position, new Vector3(transform.position.x + 1.2f, transform.position.y - platformToPlayerDistance, 0), 1 << LayerMask.NameToLayer("Platform")));
     }
 }

@@ -10,6 +10,7 @@ public class SegmentSpawner : MonoBehaviour
 
     public float totalWidth;
     public float spawnAt;
+    public float beginSpawningAt;
 
     private GameObject player;
 
@@ -37,10 +38,10 @@ public class SegmentSpawner : MonoBehaviour
 
         GameObject current = Instantiate(currentSegment) as GameObject;
         float currentSegWidth = current.GetComponent<Segment>().worldSpaceWidth;
+        current.transform.position = new Vector3(totalWidth + beginSpawningAt, 0, 0);
         totalWidth += currentSegWidth;
-        current.transform.position = new Vector3(totalWidth, 0, 0);
-        
-        spawnAt = totalWidth - (currentSegWidth / 2);
+
+        spawnAt = totalWidth - 15;
 
         getRandomSeg();
     }
@@ -49,7 +50,6 @@ public class SegmentSpawner : MonoBehaviour
     {
         // TODO: don't spawn the same segment twice in a row
         int random = Random.Range(0, segments.Length);
-        print("Poop " + random);
         currentSegment = segments[random];
     }
 }
