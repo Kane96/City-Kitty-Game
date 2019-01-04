@@ -47,7 +47,7 @@ public class DeathManager : MonoBehaviour
         return false;
     }
 
-    private void Die()
+    public void Die()
     {
         // Restart level
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
