@@ -34,8 +34,6 @@ public class SegmentSpawner : MonoBehaviour
 
     public void spawnSegment()
     {
-        //TODO: delete segments when they leave the screen
-
         GameObject current = Instantiate(currentSegment) as GameObject;
         float currentSegWidth = current.GetComponent<Segment>().worldSpaceWidth;
         current.transform.position = new Vector3(totalWidth + beginSpawningAt, 0, 0);

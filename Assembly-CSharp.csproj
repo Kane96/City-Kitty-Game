@@ -62,12 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Camera\CameraController.cs" />
-    <Compile Include="Assets\Platforms\Hazard.cs" />
+    <Compile Include="Assets\Misc\Shredder\Shredder.cs" />
+    <Compile Include="Assets\Platforms\Prefabs\Hazards\Hazard.cs" />
     <Compile Include="Assets\Platforms\Segment.cs" />
     <Compile Include="Assets\Platforms\SegmentSpawner.cs" />
+    <Compile Include="Assets\Player\CollectableManager.cs" />
     <Compile Include="Assets\Player\DeathManager.cs" />
     <Compile Include="Assets\Player\PlayerController.cs" />
-    <Compile Include="Assets\ScoreManager.cs" />
+    <Compile Include="Assets\Score\ScoreManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Programs/Save Files/Unity/Project B/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
