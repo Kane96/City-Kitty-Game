@@ -12,6 +12,8 @@ public class SegmentSpawner : MonoBehaviour
     public float spawnAt;
     public float beginSpawningAt;
 
+    public int random;
+
     private GameObject player;
 
 	void Start ()
@@ -46,8 +48,14 @@ public class SegmentSpawner : MonoBehaviour
 
     public void getRandomSeg()
     {
-        // TODO: don't spawn the same segment twice in a row
-        int random = Random.Range(0, segments.Length);
+        // Don't spawn the same segment twice in a row
+        int randomTemp;
+        do
+        {
+            randomTemp = Random.Range(0, segments.Length);
+        } while (randomTemp == random);
+        random = randomTemp;
+        
         currentSegment = segments[random];
     }
 }
