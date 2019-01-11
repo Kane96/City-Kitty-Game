@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update()
-    {
+    { 
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rigidBody.velocity = Vector2.up * veloJump;

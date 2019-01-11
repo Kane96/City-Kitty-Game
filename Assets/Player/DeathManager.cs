@@ -18,11 +18,12 @@ public class DeathManager : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 0.1f)
+        if (timer > 0.02f)
         {
             timer = 0;
             if (isStopped())
             {
+                print("Player stopped, dead");
                 Die();
             }
             else
@@ -39,7 +40,7 @@ public class DeathManager : MonoBehaviour
 
     private bool isStopped()
     {
-        if (playerTransform.position.x <= position)
+        if (playerTransform.position.x <= position + 0.1f && Time.timeSinceLevelLoad > 0.5f)
         {
             return true;
         }
@@ -50,6 +51,11 @@ public class DeathManager : MonoBehaviour
     public void Die()
     {
         // Restart level
+        foreach (GameObject game in GameObject.FindGameObjectsWithTag("Segment")) 
+        {
+            //Debug.Log(game.name);
+            //Debug.Log(game.transform.position);
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

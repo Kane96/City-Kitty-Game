@@ -19,7 +19,6 @@ public class Shredder : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print(other.gameObject.name);
         Destroy(other.gameObject);
     }
 }
