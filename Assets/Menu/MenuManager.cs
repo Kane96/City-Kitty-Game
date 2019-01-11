@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour {
 
     public bool isPaused = false;
     public GameObject pauseUI;
+    public GameObject settingsUI;
 
     void Start()
     {
@@ -16,7 +17,6 @@ public class MenuManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape))
         {
-            print("Escape pressed!");
             if (!isPaused)
             {
                 pause();
@@ -25,7 +25,6 @@ public class MenuManager : MonoBehaviour {
             {
                 unpause();
             }
-            
         }
 	}
 
@@ -41,6 +40,18 @@ public class MenuManager : MonoBehaviour {
         Time.timeScale = 1;
         isPaused = false;
         pauseUI.SetActive(false);
+    }
+
+    public void pauseToSettings()
+    {
+        pauseUI.SetActive(false);
+        settingsUI.SetActive(true);
+    }
+
+    public void settingsToPause()
+    {
+        settingsUI.SetActive(false);
+        pauseUI.SetActive(true);
     }
 
     public void reset()
