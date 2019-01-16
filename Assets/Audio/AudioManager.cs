@@ -5,12 +5,29 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour {
 
+    public static AudioManager audioManager;
     private AudioSource audio;
-    public PlayerPrefsManager playerPrefs;
+
+    private PlayerPrefsManager playerPrefs;
     public Slider slider;
 
-	void Start ()
+    void Start ()
     {
+        if (!audioManager)
+        {
+            audioManager = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        // Will be destroyed on load if this object has a parent without DontDestroyOnLoad
+        gameObject.transform.parent = null;
+        DontDestroyOnLoad(gameObject);
+
+        playerPrefs = GameObject.FindObjectOfType<PlayerPrefsManager>().GetComponent<PlayerPrefsManager>();
+
         audio = GetComponent<AudioSource>();
         slider.value = playerPrefs.getMasterVolume();
     }
@@ -18,6 +35,5 @@ public class AudioManager : MonoBehaviour {
 	void Update ()
     {
         audio.volume = playerPrefs.getMasterVolume();
-        print(audio.volume);
 	}
 }
