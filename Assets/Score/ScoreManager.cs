@@ -12,9 +12,12 @@ public class ScoreManager : MonoBehaviour
     public Text scoreText;
     public Text highScoreText;
 
+    private PlayerPrefsManager playerPrefsManager;
+
     void Start()
     {
-        highScore = getHighScore();
+        playerPrefsManager = GameObject.FindObjectOfType<PlayerPrefsManager>().GetComponent<PlayerPrefsManager>();
+        highScore = playerPrefsManager.getHighScore();
         highScoreText.text = ((int)highScore).ToString();
     }
 
@@ -33,17 +36,7 @@ public class ScoreManager : MonoBehaviour
     {
         highScore = score;
         highScoreText.text = ((int)highScore).ToString();
-        saveHighScore(highScore);
-    }
-
-    public float getHighScore()
-    {
-        return PlayerPrefs.GetFloat("HighScore");
-    }
-
-    public void saveHighScore(float newScore)
-    {
-        PlayerPrefs.SetFloat("HighScore", newScore);
+        playerPrefsManager.setHighScore(highScore);
     }
 
     public void addScore(float value)
