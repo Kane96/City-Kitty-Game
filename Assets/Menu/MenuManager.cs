@@ -13,9 +13,15 @@ public class MenuManager : MonoBehaviour {
     public GameObject loseUI;
     public GameObject startUI;
 
+    private static bool firstLoad = true;
+
     void Start()
     {
-        currentState = State.Start;
+        if (firstLoad)
+        {
+            currentState = State.Start;
+            firstLoad = false;
+        }
     }
 
 	void Update ()
