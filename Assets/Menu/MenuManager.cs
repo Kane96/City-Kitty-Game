@@ -5,58 +5,90 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
-    public bool isPaused = false;
+    public enum State {Start, Idle, Pause, Settings, Lose};
+    private State currentState = State.Idle;
+
     public GameObject pauseUI;
     public GameObject settingsUI;
+    public GameObject loseUI;
+    public GameObject startUI;
 
     void Start()
     {
-        pauseUI.SetActive(false);
+        currentState = State.Start;
     }
 
-	void Update () {
+	void Update ()
+    {
+        switch (currentState)
+        {
+            case State.Start:
+                startUI.SetActive(true);
+                Time.timeScale = 0;
+                break;
+
+            case State.Idle:
+                pauseUI.SetActive(false);
+                settingsUI.SetActive(false);
+                loseUI.SetActive(false);
+                startUI.SetActive(false);
+                Time.timeScale = 1;
+                break;
+
+            case State.Pause:
+                Time.timeScale = 0;
+                settingsUI.SetActive(false);
+                pauseUI.SetActive(true);
+                break;
+
+            case State.Settings:
+                pauseUI.SetActive(false);
+                settingsUI.SetActive(true);
+                break;
+
+            case State.Lose:
+                loseUI.SetActive(true);
+                Time.timeScale = 0;
+                break;
+        }
+
 		if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!isPaused)
+            if (currentState == State.Idle)
             {
-                pause();
+                currentState = State.Pause;
             }
-            else
+            else if (currentState == State.Pause)
             {
-                unpause();
+                currentState = State.Idle;
+            }
+            else if (currentState == State.Settings)
+            {
+                currentState = State.Idle;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (currentState == State.Pause || currentState == State.Start)
+            {
+                currentState = State.Idle;
+            }
+            else if (currentState == State.Lose)
+            {
+                reset();
             }
         }
 	}
 
-    public void pause()
+    public void setState(string newState)
     {
-        Time.timeScale = 0;
-        isPaused = true;
-        pauseUI.SetActive(true);
-    }
-
-    public void unpause()
-    {
-        Time.timeScale = 1;
-        isPaused = false;
-        pauseUI.SetActive(false);
-    }
-
-    public void pauseToSettings()
-    {
-        pauseUI.SetActive(false);
-        settingsUI.SetActive(true);
-    }
-
-    public void settingsToPause()
-    {
-        settingsUI.SetActive(false);
-        pauseUI.SetActive(true);
+        currentState = (State)System.Enum.Parse(typeof(State), newState);
     }
 
     public void reset()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        unpause();
+        currentState = State.Idle;
     }
 }

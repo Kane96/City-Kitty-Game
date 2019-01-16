@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DeathManager : MonoBehaviour
 {
+    public MenuManager menuManager;
+
     private Transform playerTransform;
     private float timer = 0;
     private float position;
@@ -24,7 +26,7 @@ public class DeathManager : MonoBehaviour
             if (isStopped())
             {
                 print("Player stopped, dead");
-                Die();
+                menuManager.setState("Lose");
             }
             else
             {
@@ -34,7 +36,7 @@ public class DeathManager : MonoBehaviour
 
         if (playerTransform.position.y <= -6)
         {
-            Die();
+            menuManager.setState("Lose");
         }
     }
 
@@ -46,16 +48,5 @@ public class DeathManager : MonoBehaviour
         }
         
         return false;
-    }
-
-    public void Die()
-    {
-        // Restart level
-        foreach (GameObject game in GameObject.FindGameObjectsWithTag("Segment")) 
-        {
-            //Debug.Log(game.name);
-            //Debug.Log(game.transform.position);
-        }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
