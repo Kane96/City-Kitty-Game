@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class DeathManager : MonoBehaviour
 {
     public MenuManager menuManager;
+    public AudioSource audio;
+
+    public bool isDead = false;
 
     private Transform playerTransform;
     private float timer = 0;
@@ -14,29 +17,33 @@ public class DeathManager : MonoBehaviour
     void Start()
     {
         playerTransform = GetComponent<Transform>();
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
-
-        if (timer > 0.02f)
+        if (!isDead)
         {
-            timer = 0;
-            if (isStopped())
-            {
-                print("Player stopped, dead");
-                menuManager.setState("Lose");
-            }
-            else
-            {
-                position = playerTransform.position.x;
-            }
-        }
+            timer += Time.deltaTime;
 
-        if (playerTransform.position.y <= -6)
-        {
-            menuManager.setState("Lose");
+            if (timer > 0.02f)
+            {
+                timer = 0;
+                if (isStopped())
+                {
+                    print("Player stopped, dead");
+                    die();
+                }
+                else
+                {
+                    position = playerTransform.position.x;
+                }
+            }
+
+            if (playerTransform.position.y <= -6)
+            {
+                die();
+            }
         }
     }
 
@@ -48,5 +55,13 @@ public class DeathManager : MonoBehaviour
         }
         
         return false;
+    }
+
+    public void die()
+    {
+        isDead = true;
+        audio.Play();
+        print("Playing: " + audio.ToString());
+        menuManager.setState("Lose");
     }
 }

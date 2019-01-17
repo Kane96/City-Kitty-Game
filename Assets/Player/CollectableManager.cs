@@ -11,8 +11,11 @@ public class CollectableManager : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Collectable")
         {
-            scoreManager.addScore(coinValue);
-            Destroy(collision.gameObject);
+            GameObject collectable = collision.gameObject;
+            collectable.GetComponent<AudioSource>().Play();
+            collectable.GetComponent<SpriteRenderer>().enabled = false;
+            collectable.GetComponent<BoxCollider2D>().enabled = false;
+            scoreManager.addScore(coinValue);   
         }
     }
 }
