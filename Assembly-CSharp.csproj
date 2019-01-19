@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Audio\AudioManager.cs" />
     <Compile Include="Assets\Audio\SFX.cs" />
+    <Compile Include="Assets\Background\BackgroundManager.cs" />
     <Compile Include="Assets\Camera\CameraController.cs" />
     <Compile Include="Assets\Menu\MenuManager.cs" />
     <Compile Include="Assets\Menu\PlayerPrefsManager.cs" />
