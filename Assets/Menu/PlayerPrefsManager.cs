@@ -12,6 +12,7 @@ public class PlayerPrefsManager : MonoBehaviour {
 
     public void setHighScore(float newScore)
     {
+        print(newScore);
         PlayerPrefs.SetFloat("HighScore", newScore);
     }
 

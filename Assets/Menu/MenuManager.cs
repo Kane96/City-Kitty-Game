@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
-    public enum State {Start, Idle, Pause, Settings, Lose};
+    public enum State {Start, Idle, Pause, Settings, Lose, ResetScoreConfirm};
     private State currentState = State.Idle;
 
     public GameObject pauseUI;
     public GameObject settingsUI;
     public GameObject loseUI;
     public GameObject startUI;
+    public GameObject resetScoreUI;
 
     private static bool firstLoad = true;
 
@@ -49,7 +50,13 @@ public class MenuManager : MonoBehaviour {
 
             case State.Settings:
                 pauseUI.SetActive(false);
+                resetScoreUI.SetActive(false);
                 settingsUI.SetActive(true);
+                break;
+
+            case State.ResetScoreConfirm:
+                settingsUI.SetActive(false);
+                resetScoreUI.SetActive(true);
                 break;
 
             case State.Lose:

@@ -17,8 +17,6 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         playerPrefsManager = GameObject.FindObjectOfType<PlayerPrefsManager>().GetComponent<PlayerPrefsManager>();
-        highScore = playerPrefsManager.getHighScore();
-        highScoreText.text = ((int)highScore).ToString();
     }
 
     void Update()
@@ -26,17 +24,12 @@ public class ScoreManager : MonoBehaviour
         score += 10f * Time.deltaTime;
         scoreText.text = ((int)score).ToString();
 
+        highScore = playerPrefsManager.getHighScore();
+        highScoreText.text = ((int)highScore).ToString();
         if (score > highScore)
         {
-            updateHighScore();
+            playerPrefsManager.setHighScore(score);
         }
-    }
-
-    public void updateHighScore()
-    {
-        highScore = score;
-        highScoreText.text = ((int)highScore).ToString();
-        playerPrefsManager.setHighScore(highScore);
     }
 
     public void addScore(float value)
