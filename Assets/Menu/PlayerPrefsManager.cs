@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPrefsManager : MonoBehaviour {
 
@@ -14,13 +15,23 @@ public class PlayerPrefsManager : MonoBehaviour {
         PlayerPrefs.SetFloat("HighScore", newScore);
     }
 
-    public float getMasterVolume()
+    public float getMusicVolume()
     {
         return PlayerPrefs.GetFloat("MasterVolume");
     }
 
-    public void setMasterVolume(float volume)
+    public void setMusicVolume(Slider slider)
     {
-        PlayerPrefs.SetFloat("MasterVolume", volume);
+        PlayerPrefs.SetFloat("MasterVolume", slider.value);
+    }
+
+    public float getSFXVolume()
+    {
+        return PlayerPrefs.GetFloat("SFXVolume");
+    }
+
+    public void setSFXVolume(Slider slider)
+    {
+        PlayerPrefs.SetFloat("SFXVolume", slider.value);
     }
 }

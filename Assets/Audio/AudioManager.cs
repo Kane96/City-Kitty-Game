@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour {
 
     public static AudioManager audioManager;
-    private AudioSource audio;
+    private AudioSource musicAudio;
 
     private PlayerPrefsManager playerPrefs;
-    public Slider slider;
+    public Slider musicSlider;
+    public Slider sfxSlider;
 
     void Start ()
     {
+        // Only one instance of AudioManager
         if (!audioManager)
         {
             audioManager = this;
@@ -27,13 +29,13 @@ public class AudioManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
 
         playerPrefs = GameObject.FindObjectOfType<PlayerPrefsManager>().GetComponent<PlayerPrefsManager>();
-
-        audio = GetComponent<AudioSource>();
-        slider.value = playerPrefs.getMasterVolume();
+        musicAudio = GetComponent<AudioSource>();
+        musicSlider.value = playerPrefs.getMusicVolume();
+        sfxSlider.value = playerPrefs.getSFXVolume();
     }
-	
-	void Update ()
+
+    void Update ()
     {
-        audio.volume = playerPrefs.getMasterVolume();
+        musicAudio.volume = playerPrefs.getMusicVolume();
 	}
 }

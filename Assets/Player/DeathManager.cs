@@ -61,7 +61,6 @@ public class DeathManager : MonoBehaviour
     {
         isDead = true;
         audio.Play();
-        print("Playing: " + audio.ToString());
         menuManager.setState("Lose");
     }
 }

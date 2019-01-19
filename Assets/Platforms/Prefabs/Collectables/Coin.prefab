@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212524196732322096}
   - component: {fileID: 61095511925239910}
   - component: {fileID: 82380593192668598}
+  - component: {fileID: 114547898515563460}
   m_Layer: 8
   m_Name: Coin
   m_TagString: Collectable
@@ -162,6 +163,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114547898515563460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1491171411199708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ebb6aa319e7cf248925c095b35c2258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212524196732322096
 SpriteRenderer:
   m_ObjectHideFlags: 1

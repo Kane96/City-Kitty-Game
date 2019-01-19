@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 4778243824774184}
   - component: {fileID: 212611783483119094}
   - component: {fileID: 61232547899576028}
+  - component: {fileID: 114684024765221048}
   m_Layer: 8
   m_Name: Coin
   m_TagString: Collectable
@@ -184,6 +185,7 @@ GameObject:
   - component: {fileID: 4416976773211760}
   - component: {fileID: 212446232662123266}
   - component: {fileID: 61612359899666284}
+  - component: {fileID: 114824973244315008}
   m_Layer: 8
   m_Name: Coin (1)
   m_TagString: Collectable
@@ -674,6 +676,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldSpaceWidth: 14
+--- !u!114 &114684024765221048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429965310961544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ebb6aa319e7cf248925c095b35c2258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114824973244315008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1648061823042552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ebb6aa319e7cf248925c095b35c2258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212055162322398738
 SpriteRenderer:
   m_ObjectHideFlags: 1
