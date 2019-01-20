@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1053b87132aa149bebbe105ca0f7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuManager: {fileID: 0}
+  player: {fileID: 114877943376624654, guid: 2d668f73f6684a148919fa541468eaa5, type: 2}
 --- !u!212 &212960427150084768
 SpriteRenderer:
   m_ObjectHideFlags: 1

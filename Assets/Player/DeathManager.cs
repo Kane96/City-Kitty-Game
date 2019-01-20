@@ -59,6 +59,7 @@ public class DeathManager : MonoBehaviour
 
     public void die()
     {
+        print("Playing audio!");
         isDead = true;
         audio.Play();
         menuManager.setState("Lose");
