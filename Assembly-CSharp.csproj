@@ -72,6 +72,7 @@
     <Compile Include="Assets\Menu\MenuManager.cs" />
     <Compile Include="Assets\Menu\PlayerPrefsManager.cs" />
     <Compile Include="Assets\Misc\Shredder\Shredder.cs" />
+    <Compile Include="Assets\Platforms\Prefabs\Collectables\CoinScoreAnimation.cs" />
     <Compile Include="Assets\Platforms\Prefabs\Hazards\Hazard.cs" />
     <Compile Include="Assets\Platforms\Segment.cs" />
     <Compile Include="Assets\Platforms\SegmentSpawner.cs" />

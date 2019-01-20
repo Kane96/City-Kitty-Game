@@ -15,6 +15,11 @@ public class CollectableManager : MonoBehaviour {
             collectable.GetComponent<AudioSource>().Play();
             collectable.GetComponent<SpriteRenderer>().enabled = false;
             collectable.GetComponent<BoxCollider2D>().enabled = false;
+
+            GameObject scoreText = collectable.transform.GetChild(0).gameObject;
+            scoreText.GetComponent<SpriteRenderer>().enabled = true;
+            scoreText.GetComponent<Animator>().SetBool("coinCollected", true);
+
             scoreManager.addScore(coinValue);   
         }
     }
