@@ -3393,6 +3393,26 @@ Prefab:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 135099201}
+    - target: {fileID: 61787684868129938, guid: 2d668f73f6684a148919fa541468eaa5,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.13590276
+      objectReference: {fileID: 0}
+    - target: {fileID: 61787684868129938, guid: 2d668f73f6684a148919fa541468eaa5,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.6257751
+      objectReference: {fileID: 0}
+    - target: {fileID: 61787684868129938, guid: 2d668f73f6684a148919fa541468eaa5,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.0019695908
+      objectReference: {fileID: 0}
+    - target: {fileID: 61787684868129938, guid: 2d668f73f6684a148919fa541468eaa5,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.93303347
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d668f73f6684a148919fa541468eaa5, type: 2}
   m_IsPrefabAsset: 0
