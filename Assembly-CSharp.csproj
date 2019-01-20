@@ -65,6 +65,7 @@
     <Compile Include="Assets\Audio\SFX.cs" />
     <Compile Include="Assets\Background\Background.cs" />
     <Compile Include="Assets\Background\BackgroundManager.cs" />
+    <Compile Include="Assets\Background\BackgroundSky.cs" />
     <Compile Include="Assets\Background\Cloud.cs" />
     <Compile Include="Assets\Background\CloudManager.cs" />
     <Compile Include="Assets\Camera\CameraController.cs" />
