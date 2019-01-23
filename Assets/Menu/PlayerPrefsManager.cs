@@ -5,6 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerPrefsManager : MonoBehaviour {
 
+    public float defaultAudio;
+
+    void Start()
+    {
+        if (PlayerPrefs.GetInt("IsInitialised") == 0)
+        {
+            PlayerPrefs.SetFloat("MasterVolume", defaultAudio);
+            PlayerPrefs.SetFloat("SFXVolume", defaultAudio);
+
+            PlayerPrefs.SetInt("IsInitialised", 1);
+        }
+    }
+
     public float getHighScore()
     {
         return PlayerPrefs.GetFloat("HighScore");

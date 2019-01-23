@@ -31,8 +31,8 @@ public class DeathManager : MonoBehaviour
                 timer = 0;
                 if (isStopped())
                 {
-                    print("Player stopped, dead");
-                    die();
+                    //print("Player stopped, dead");
+                    //die();
                 }
                 else
                 {
@@ -59,7 +59,6 @@ public class DeathManager : MonoBehaviour
 
     public void die()
     {
-        print("Playing audio!");
         isDead = true;
         audio.Play();
         menuManager.setState("Lose");

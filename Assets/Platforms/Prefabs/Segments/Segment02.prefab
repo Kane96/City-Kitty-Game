@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 68340018870676744}
   m_Layer: 8
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 68872118508887142}
   m_Layer: 8
   m_Name: Block (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
