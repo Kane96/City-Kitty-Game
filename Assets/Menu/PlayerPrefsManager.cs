@@ -13,6 +13,7 @@ public class PlayerPrefsManager : MonoBehaviour {
         {
             PlayerPrefs.SetFloat("MasterVolume", defaultAudio);
             PlayerPrefs.SetFloat("SFXVolume", defaultAudio);
+            PlayerPrefs.SetFloat("HighScore", 0);
 
             PlayerPrefs.SetInt("IsInitialised", 1);
         }

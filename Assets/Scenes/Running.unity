@@ -2499,7 +2499,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 942138072}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4270,6 +4270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba29645ac08db34390b8c5243071481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultAudio: 50
 --- !u!4 &1628611709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4727728954885338, guid: 9aa43aaf036f9af49a971b5adc13a442,
