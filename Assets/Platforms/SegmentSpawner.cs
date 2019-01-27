@@ -10,10 +10,10 @@ public class SegmentSpawner : MonoBehaviour
 
     private GameObject currentSegment;
 
-    // Difficulty is the gradually increasing index of the segments array.
     private int difficulty = 0;
     [Tooltip("In seconds")]
     public float difficultyIncreaseFreq;
+    private float nextDifficultyIncrease;
 
     private float totalWidth;
     private float spawnAt;
@@ -25,8 +25,7 @@ public class SegmentSpawner : MonoBehaviour
 
 	void Start ()
     {
-        // Unity crashes when initialising arrays of gameobject arrays...
-
+        nextDifficultyIncrease = difficultyIncreaseFreq;
         player = GameObject.FindGameObjectWithTag("Player");
         getRandomSeg();
         spawnSegment();
@@ -34,7 +33,8 @@ public class SegmentSpawner : MonoBehaviour
 
 	void Update ()
     {
-        int numberOfDifficulties = 3;
+        print(difficulty);
+
         Vector3 playerPos = player.GetComponent<Transform>().position;
         
         // If it's time to spawn a new level segment ahead of the player
@@ -43,7 +43,7 @@ public class SegmentSpawner : MonoBehaviour
             spawnSegment();
         }
         
-        if (Time.time >= difficultyIncreaseFreq && !(difficulty >= numberOfDifficulties))
+        if (Time.time >= nextDifficultyIncrease)
         {
             increaseDifficulty();
         }
@@ -79,28 +79,21 @@ public class SegmentSpawner : MonoBehaviour
     
     public GameObject[] getRandomSegArray()
     {
-        
         int randomTemp = Random.Range(0, difficulty);
-        switch (randomTemp)
+        if (randomTemp <= 1)
         {
-            case 0:
-                return easySegments;
-            case 1:
-                return normalSegments;
-            case 2:
-                return hardSegments;
-            default:
-                print("Error finding a random segment!");
-                return easySegments;
+            return easySegments;
         }
-        
-        return easySegments;
+        else if (randomTemp > 1 && randomTemp <= 4)
+        {
+            return normalSegments;
+        }
+        return hardSegments;
     }
-    
     
     public void increaseDifficulty()
     {
-        difficultyIncreaseFreq += Time.time;
+        nextDifficultyIncrease = difficultyIncreaseFreq + Time.time;
         difficulty++;
     }
     
