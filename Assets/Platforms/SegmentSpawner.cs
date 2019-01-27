@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class SegmentSpawner : MonoBehaviour
 {
-
     public GameObject[] segments;
-    public GameObject currentSegment;
+    private GameObject currentSegment;
 
-    public float totalWidth;
-    public float spawnAt;
-    public float beginSpawningAt;
+    private float totalWidth;
+    private float spawnAt;
+    private float beginSpawningAt;
 
-    public int random;
+    private int random;
 
     private GameObject player;
 

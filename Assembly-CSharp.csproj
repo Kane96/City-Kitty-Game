@@ -80,7 +80,13 @@
     <Compile Include="Assets\Player\DeathCollider.cs" />
     <Compile Include="Assets\Player\DeathManager.cs" />
     <Compile Include="Assets\Player\PlayerController.cs" />
+    <Compile Include="Assets\RainMaker\Prefab\BaseRainScript.cs" />
+    <Compile Include="Assets\RainMaker\Prefab\RainCollision.cs" />
+    <Compile Include="Assets\RainMaker\Prefab\RainScript.cs" />
+    <Compile Include="Assets\RainMaker\Prefab\RainScript2D.cs" />
     <Compile Include="Assets\Score\ScoreManager.cs" />
+    <None Include="Assets\RainMaker\Prefab\RainShader.shader" />
+    <None Include="Assets\RainMaker\Readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Programs/Save Files/Unity/Project B/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
