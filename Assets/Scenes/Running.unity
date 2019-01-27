@@ -2482,17 +2482,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ae489258a324e4aadfd75b80c554d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  segments:
+  easySegments:
   - {fileID: 1115450500525014, guid: 0cf33b226fea2e04fb2fd1c30feccdde, type: 2}
+  - {fileID: 1115450500525014, guid: 0cf33b226fea2e04fb2fd1c30feccdde, type: 2}
+  - {fileID: 1115450500525014, guid: 0cf33b226fea2e04fb2fd1c30feccdde, type: 2}
+  normalSegments:
   - {fileID: 1936597232200056, guid: e8bae8ed7a2e5e348a74fa566928807f, type: 2}
+  - {fileID: 1936597232200056, guid: e8bae8ed7a2e5e348a74fa566928807f, type: 2}
+  - {fileID: 1936597232200056, guid: e8bae8ed7a2e5e348a74fa566928807f, type: 2}
+  hardSegments:
   - {fileID: 1838191765224460, guid: f17eb7bcf2647c646b4b8efb20ef3453, type: 2}
-  - {fileID: 1233113850953468, guid: 1f5f28345ca943f4494b6f23043fac04, type: 2}
-  currentSegment: {fileID: 1936518910235258, guid: bb42dc8e891321a48a0b9e1dfde32d09,
-    type: 2}
-  totalWidth: 0
-  spawnAt: 0
+  - {fileID: 1838191765224460, guid: f17eb7bcf2647c646b4b8efb20ef3453, type: 2}
+  - {fileID: 1838191765224460, guid: f17eb7bcf2647c646b4b8efb20ef3453, type: 2}
+  difficultyIncreaseFreq: 5
   beginSpawningAt: 10
-  random: 0
 --- !u!4 &942138074
 Transform:
   m_ObjectHideFlags: 0
@@ -3945,6 +3948,10 @@ Prefab:
     - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 2}
       propertyPath: CollisionMask.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 191326, guid: b046278bb9b6e104790392b566667ba5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b046278bb9b6e104790392b566667ba5, type: 2}
