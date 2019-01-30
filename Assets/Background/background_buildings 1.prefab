@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50522716703148644}
   m_Layer: 0
   m_Name: background_buildings 1
-  m_TagString: Untagged
+  m_TagString: Background Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 18.75, y: 7.3125}
+    oldSize: {x: 24, y: 9.36}
     newSize: {x: 18.75, y: 6.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   veloRight: 7
+  canMove: 0
 --- !u!212 &212604071702666936
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BackgroundSky : MonoBehaviour {
 
-    public GameObject player;
-
-    public float offset;
+    private Vector3 newPos;
+    private Transform camera;
 
 	void Update ()
     {
-        Vector3 newPos = new Vector3(offset + player.transform.position.x, 0, 0);
+        camera = Camera.main.transform;
+        newPos = new Vector3(camera.position.x, camera.position.y, 0);
         transform.position = newPos;
 	}
 }

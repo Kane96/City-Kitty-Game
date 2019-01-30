@@ -33,8 +33,6 @@ public class SegmentSpawner : MonoBehaviour
 
 	void Update ()
     {
-        print(difficulty);
-
         Vector3 playerPos = player.GetComponent<Transform>().position;
         
         // If it's time to spawn a new level segment ahead of the player

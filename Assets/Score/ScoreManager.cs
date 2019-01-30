@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-
     private float score;
     private float highScore;
 
@@ -21,7 +20,7 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        score += 10f * Time.deltaTime;
+        addScore(10f * Time.deltaTime);
         scoreText.text = ((int)score).ToString();
 
         highScore = playerPrefsManager.getHighScore();

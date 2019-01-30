@@ -17,9 +17,8 @@ public class BackgroundManager : MonoBehaviour {
 	void Start ()
     {
         SpriteRenderer sprite = background.GetComponent<SpriteRenderer>();
-        Vector3 spriteSize = sprite.bounds.size;
-        backgroundWidth = spriteSize.x;
-	}
+        backgroundWidth = sprite.bounds.size.x;
+    }
 	
 	void Update ()
     {

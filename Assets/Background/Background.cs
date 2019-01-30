@@ -5,6 +5,7 @@ using UnityEngine;
 public class Background : MonoBehaviour {
 
     public float veloRight;
+    public bool canMove;
 
     private Rigidbody2D rigidBody;
     private Vector2 moveVelo;
@@ -17,6 +18,10 @@ public class Background : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        rigidBody.velocity = moveVelo;
+        if (canMove)
+        {
+            transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y - 1.2f, 0);
+            rigidBody.velocity = moveVelo;
+        }
     }
 }

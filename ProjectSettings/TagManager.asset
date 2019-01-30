@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Collectable
   - Platform
+  - Segment
+  - Background Buildings
   layers:
   - Default
   - TransparentFX

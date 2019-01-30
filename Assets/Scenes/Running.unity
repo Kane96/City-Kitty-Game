@@ -345,7 +345,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 205.19995, y: 232.00006}
+  m_AnchoredPosition: {x: 177.69995, y: 222}
   m_SizeDelta: {x: 230.1, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &31537080
@@ -2367,7 +2367,7 @@ MonoBehaviour:
   - {fileID: 1568292998756454, guid: 985272eba67ee444aa068277e73f02fe, type: 2}
   - {fileID: 1568292998756454, guid: 985272eba67ee444aa068277e73f02fe, type: 2}
   - {fileID: 1568292998756454, guid: 985272eba67ee444aa068277e73f02fe, type: 2}
-  difficultyIncreaseFreq: 2
+  difficultyIncreaseFreq: 5
   beginSpawningAt: 10
 --- !u!4 &942138074
 Transform:
@@ -2797,7 +2797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -293, y: 232}
+  m_AnchoredPosition: {x: -293, y: 221.99994}
   m_SizeDelta: {x: 128.8, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074805947
@@ -3152,6 +3152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9ba9576ac2a534783e11fca67878e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1310734833}
+  score: {fileID: 135099201}
+  scoreText:
+  - {fileID: 1074805947}
+  - {fileID: 1895961586}
+  - {fileID: 31537080}
+  - {fileID: 2082154603}
   pauseUI: {fileID: 766331864}
   settingsUI: {fileID: 951844231}
   loseUI: {fileID: 2079203363}
@@ -3263,6 +3270,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1346478794}
   m_Script: {fileID: 11500000, guid: b2cd4d6e66fdf3c48962128aa5180baa, type: 3}
+--- !u!114 &1310734833 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114406758211846084, guid: 2d668f73f6684a148919fa541468eaa5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1346478794}
+  m_Script: {fileID: 11500000, guid: d784e36b79eeee24ca3c86d9aecdf664, type: 3}
 --- !u!1 &1330128393
 GameObject:
   m_ObjectHideFlags: 0
@@ -3616,8 +3629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f898baffd88f2ea4f88d6f9fcad4eeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1310734825}
-  offset: 6
 --- !u!1 &1424300318
 GameObject:
   m_ObjectHideFlags: 0
@@ -4735,7 +4746,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -154.39998, y: 232.00006}
+  m_AnchoredPosition: {x: -154.39998, y: 222}
   m_SizeDelta: {x: 128.8, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1895961586
@@ -5110,7 +5121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 394.5, y: 232.00006}
+  m_AnchoredPosition: {x: 367, y: 222}
   m_SizeDelta: {x: 128.8, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2082154603

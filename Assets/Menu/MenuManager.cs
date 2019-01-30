@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
     public enum State {Start, Idle, Pause, Settings, Lose, ResetScoreConfirm};
     private State currentState = State.Idle;
+
+    public PlayerController player;
+    public ScoreManager score;
+    public Text[] scoreText;
 
     public GameObject pauseUI;
     public GameObject settingsUI;
@@ -31,10 +36,11 @@ public class MenuManager : MonoBehaviour {
         {
             case State.Start:
                 startUI.SetActive(true);
-                Time.timeScale = 0;
+                toggleStart(false);
                 break;
 
             case State.Idle:
+                toggleStart(true);
                 pauseUI.SetActive(false);
                 settingsUI.SetActive(false);
                 loseUI.SetActive(false);
@@ -103,5 +109,19 @@ public class MenuManager : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         currentState = State.Idle;
+    }
+
+    public void toggleStart(bool canStart)
+    {
+        player.canMove = canStart;
+        score.enabled = canStart;
+        foreach (GameObject background in GameObject.FindGameObjectsWithTag("Background Buildings"))
+        {
+            background.GetComponent<Background>().canMove = canStart;
+        }
+        for (int i = 0; i < scoreText.Length; i++)
+        {
+            scoreText[i].enabled = canStart;
+        }
     }
 }

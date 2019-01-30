@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public float veloRight;
     public float veloJump;
 
+    public bool canMove;
+
     private float timer = 0;
     public float maxTimeInAir;
     public float multiplierFall;
@@ -25,9 +27,12 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 moveVelo = rigidBody.velocity;
-        moveVelo.x = veloRight;
-        rigidBody.velocity = moveVelo;
+        if (canMove)
+        {
+            Vector2 moveVelo = rigidBody.velocity;
+            moveVelo.x = veloRight;
+            rigidBody.velocity = moveVelo;
+        }
     }
 
     void Update()
