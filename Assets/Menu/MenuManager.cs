@@ -41,11 +41,12 @@ public class MenuManager : MonoBehaviour {
                 break;
 
             case State.CamStartAnim:
-                startUI.SetActive(false);
+                startUI.GetComponent<Animator>().SetTrigger("Fade");
                 camera.startAnimation();
                 break;
 
             case State.Idle:
+                startUI.SetActive(false);
                 toggleStart(true);
                 pauseUI.SetActive(false);
                 settingsUI.SetActive(false);
@@ -132,5 +133,10 @@ public class MenuManager : MonoBehaviour {
         {
             scoreText[i].enabled = canStart;
         }
+    }
+
+    public void quit()
+    {
+        Application.Quit();
     }
 }
