@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93c80fe6a972b2438db0844da8a9542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yPosDivideOffset: 3
   veloRight: 5
   canMove: 0
 --- !u!212 &212604071702666936

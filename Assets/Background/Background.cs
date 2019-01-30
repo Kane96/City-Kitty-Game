@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Background : MonoBehaviour {
 
+    public float yPosDivideOffset;
     public float veloRight;
     public bool canMove;
 
@@ -20,7 +21,7 @@ public class Background : MonoBehaviour {
     {
         if (canMove)
         {
-            transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y - 1.2f, 0);
+            transform.position = new Vector3(transform.position.x, 0, 0);
             rigidBody.velocity = moveVelo;
         }
     }
@@ -29,7 +30,8 @@ public class Background : MonoBehaviour {
     {
         if (!canMove)
         {
-            transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 1.2f, 0);
+            float ypos =  Camera.main.transform.position.y / yPosDivideOffset;
+            transform.position = new Vector3(Camera.main.transform.position.x, ypos, 0);
         }
     }
 }

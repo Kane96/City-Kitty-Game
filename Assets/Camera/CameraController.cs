@@ -23,7 +23,6 @@ public class CameraController : MonoBehaviour {
         if (menuManager.currentState == MenuManager.State.Idle)
         {
             animator.enabled = false;
-            print(player.transform.position.x);
             currentPos = new Vector3(player.transform.position.x + 6, 0, -10);
             gameObject.transform.position = currentPos;
         }
