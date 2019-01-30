@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
-    public enum State {Start, Idle, Pause, Settings, Lose, ResetScoreConfirm};
-    private State currentState = State.Idle;
+    public enum State {Start, CamStartAnim, Idle, Pause, Settings, Lose, ResetScoreConfirm};
+    public State currentState = State.Idle;
 
     public PlayerController player;
     public ScoreManager score;
     public Text[] scoreText;
+    public CameraController camera;
 
     public GameObject pauseUI;
     public GameObject settingsUI;
@@ -39,12 +40,16 @@ public class MenuManager : MonoBehaviour {
                 toggleStart(false);
                 break;
 
+            case State.CamStartAnim:
+                startUI.SetActive(false);
+                camera.startAnimation();
+                break;
+
             case State.Idle:
                 toggleStart(true);
                 pauseUI.SetActive(false);
                 settingsUI.SetActive(false);
                 loseUI.SetActive(false);
-                startUI.SetActive(false);
                 Time.timeScale = 1;
                 break;
 
@@ -89,7 +94,11 @@ public class MenuManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (currentState == State.Pause || currentState == State.Start)
+            if (currentState == State.Start)
+            {
+                currentState = State.CamStartAnim;
+            }
+            else if (currentState == State.Pause)
             {
                 currentState = State.Idle;
             }

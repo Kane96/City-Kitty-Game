@@ -1585,6 +1585,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1610,6 +1611,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf12a6c46de66d4589c02eb30a14c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
+  menuManager: {fileID: 1241521531}
+  animator: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1657,12 +1661,30 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 6, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &519420033
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0159fc08b9208614f8538fa5cadfbb81, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &544830199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,7 +2967,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1169235913
 GameObject:
@@ -3152,6 +3174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9ba9576ac2a534783e11fca67878e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 2
   player: {fileID: 1310734833}
   score: {fileID: 135099201}
   scoreText:
@@ -3159,6 +3182,7 @@ MonoBehaviour:
   - {fileID: 1895961586}
   - {fileID: 31537080}
   - {fileID: 2082154603}
+  camera: {fileID: 519420030}
   pauseUI: {fileID: 766331864}
   settingsUI: {fileID: 951844231}
   loseUI: {fileID: 2079203363}

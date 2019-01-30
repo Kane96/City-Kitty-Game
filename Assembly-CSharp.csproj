@@ -68,6 +68,7 @@
     <Compile Include="Assets\Background\BackgroundSky.cs" />
     <Compile Include="Assets\Background\Cloud.cs" />
     <Compile Include="Assets\Background\CloudManager.cs" />
+    <Compile Include="Assets\Camera\CameraAnimation.cs" />
     <Compile Include="Assets\Camera\CameraController.cs" />
     <Compile Include="Assets\Menu\MenuManager.cs" />
     <Compile Include="Assets\Menu\PlayerPrefsManager.cs" />

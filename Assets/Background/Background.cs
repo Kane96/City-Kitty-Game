@@ -24,4 +24,12 @@ public class Background : MonoBehaviour {
             rigidBody.velocity = moveVelo;
         }
     }
+
+    void Update()
+    {
+        if (!canMove)
+        {
+            transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y - 1.2f, 0);
+        }
+    }
 }
