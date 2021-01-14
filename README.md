@@ -1,4 +1,4 @@
-# Project-B
+# City Kitty
 
 <img src="https://i.imgur.com/0ybjC59.png" alt="Title Screen" width="700"/>
 
@@ -12,7 +12,7 @@ Once the game has started, press space to jump and escape to pause the game and/
 
 ## Details
 
-Project-B (or City Kitty) is an endless runner game made in Unity using C# as part of a small hobby project, over the timespan of week or so. The difficulty increases as the game goes on. Programming done by me.
+City Kitty is an endless runner game made in Unity using C# as part of a small hobby project, over the timespan of week or so. The difficulty increases as the game goes on. Programming done by me.
 
 ## Build
 
