@@ -12,4 +12,4 @@ Project-B (or City Kitty) is an endless runner game made in Unity using C# as pa
 
 ## Build
 
-In order to build the game, Unity 2019.4.17f1 is required. Later versions can be used but you may see unexpected results.
+In order to build the game, Unity 2019.4.17f1 is required. Later versions can be used but you may see unexpected results. Open the root directory as the project file, navigate to File -> Build Settings -> select your target platform and select Build/Build And Run.
