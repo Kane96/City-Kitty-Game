@@ -1,10 +1,14 @@
 # Project-B
 
+<img src="https://i.imgur.com/0ybjC59.png" alt="Title Screen" width="700"/>
+
 ## Usage
 
 [Link to game (WebGL)](https://kane96.github.io/Project-B/)
 
 Once the game has started, press space to jump and escape to pause the game and/or change the settings. Avoid hazards and see how far you can get!
+
+<img src="https://i.imgur.com/R83XWHs.png" alt="Gameplay" width="700"/>
 
 ## Details
 
