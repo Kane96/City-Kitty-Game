@@ -6,7 +6,7 @@
 
 [Link to game (WebGL)](https://kane96.github.io/City-Kitty-Game/)
 
-Once the game has started, press space to jump and escape to pause the game and/or change the settings. Avoid hazards and see how far you can get!
+Once the game has started, press space to jump and escape to pause the game and/or change the settings. Avoid hazards, collect cat food and see how far you can get!
 
 <img src="https://i.imgur.com/R83XWHs.png" alt="Gameplay" width="700"/>
 
