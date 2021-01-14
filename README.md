@@ -12,4 +12,4 @@ Project-B (or City Kitty) is an endless runner game made in Unity using C# as pa
 
 ## Build
 
-Requires a WebGL-capable browser such as Chrome, Firefox  or Internet Explorer. The game may run on mobile but it is only playable on desktop. 
+In order to build the game, Unity 2019.4.17f1 is required. Later versions can be used but you may see unexpected results.
