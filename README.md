@@ -12,7 +12,7 @@ Once the game has started, press space to jump and escape to pause the game and/
 
 ## Details
 
-City Kitty is an endless runner game made in Unity using C# as part of a small hobby project, over the timespan of week or so. This game was made in collaboration with an artise who I worked closely with. The difficulty increases as the game goes on. Programming done by me.
+City Kitty is an endless runner game made in Unity using C# as part of a small hobby projec. This was a small hobby project developed over a few weeks, working in close collaberation with an artist who developed the graphical assets. The difficulty increases as the game goes on. Programming done by me.
 
 ## Build
 
